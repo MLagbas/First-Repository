@@ -12,6 +12,6 @@ public with sharing class AccountController {
   * Last modified by Miko in Glic-Tech on 13-04-2021.
   */
     public static List<Account> getAllActiveAccounts() {
-      return [SELECT Id,Name,Active__c FROM Account WHERE Active__c = 'Yes'];
+      return [SELECT Id,Name,Active__c FROM Account WHERE Active__c = 'Yes' LIMIT 5];
     }
 }
