@@ -14,4 +14,14 @@ public with sharing class AccountController {
     public static List<Account> getAllActiveAccounts() {
       return [SELECT Id,Name,Active__c FROM Account WHERE Active__c = 'Yes' LIMIT 5];
     }
+
+    /*
+    * Description: Retrives all opportunities based on parent account.
+    *
+    * Last modified by Miko in Glic-Tech on 13-04-2021.
+    */
+    @testvisible
+    static void methodName(String accountId){
+      return [SELECT id,name,amount from opportunity where accountId =: accountId];
+    }
 }
